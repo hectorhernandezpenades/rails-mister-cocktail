@@ -4,6 +4,7 @@
   <div class="cocktail-list">
     <% @cocktails.each do |cocktail| %>
       <div class="card" style="width: 18rem;">
+        <%= cl_image_tag(cocktail.photo, crop: :fit) %>
         <img src="" class="card-img-top" alt="">
         <div class="card-body">
           <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>

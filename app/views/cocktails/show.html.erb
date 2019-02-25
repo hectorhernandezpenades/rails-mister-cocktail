@@ -2,9 +2,10 @@
   <div class="doses-ingredients">
     <h1><%= @cocktail.name %></h1>
     <tbody>
+      <%= cl_image_tag(@cocktail.photo, crop: :fit) %>
       <% @cocktail.doses.each do |dose| %>
         <tr>
-          <td><%= dose.description %> - <%= dose.ingredient.name %></td>
+          <td><p class="ingredients-list"><%= dose.description %> - <%= dose.ingredient.name %></td>
           <td class="far fa-trash-alt">
             <%= link_to dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="far fa-trash-alt"></i>
@@ -14,7 +15,9 @@
         </tr>
       <% end %>
     </tbody>
-    <button class="btn btn-secondary" type="button"><%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail) %></button>
-    <button class="btn btn-secondary" type="button"><%= link_to 'List of cocktails', cocktails_path %></button>
+    <div class="buttons">
+      <button class="btn btn-secondary" type="button"><%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail) %></button>
+      <button class="btn btn-secondary" type="button"><%= link_to 'List of cocktails', cocktails_path %></button>
+    </div>
   </div>
 </div>
