@@ -1,5 +1,10 @@
 <div class="container">
-  <h1>Cocktails</h1>
+  <div class="header-container">
+    <div class="video">
+      <%= video_tag "landing-video.mp4", autoplay: "autoplay", id: "video", muted: true, width: "  100%", loop: "true", :class => "video"%>
+    </div>
+    <h1>Hector's Cocktails</h1>
+  </div>
 
   <div class="cocktail-list">
     <% @cocktails.each do |cocktail| %>
