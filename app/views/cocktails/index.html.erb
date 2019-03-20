@@ -6,17 +6,17 @@
     <h1>Hector's Cocktails</h1>
   </div>
 
-  <div class="cocktail-list">
+  <div class="cards">
     <% @cocktails.each do |cocktail| %>
-      <div class="card" style="width: 18rem;">
-        <%= cl_image_tag(cocktail.photo, crop: :fit) %>
-        <img src="" class="card-img-top" alt="">
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
-        </div>
+      <%= link_to cocktail_path(cocktail) do %>
+      <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo %>)">
+        <%= cocktail.name %>
       </div>
+      <% end %>
     <% end %>
   </div>
 
+
   <button type="button" class="btn btn-secondary btn-lg btn-block"><%= link_to 'New Cocktail', new_cocktail_path %></button>
+
 </div>
