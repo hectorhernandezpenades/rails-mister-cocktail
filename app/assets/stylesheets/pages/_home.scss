@@ -33,6 +33,9 @@ button a:hover {
 }
 
 .video{
-  // margin-top: -360px;
   z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
 }
