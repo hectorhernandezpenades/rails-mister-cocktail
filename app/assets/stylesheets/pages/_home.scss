@@ -1,25 +1,40 @@
 // Specific CSS for your home-page
-h1 {
-  color: white;
-  font-size: 60px;
-}
-
-.card-cocktail {
-  background-size: cover !important;
-  background-position: center !important;
-  height: 179px;
-  width: 180px;
+.header-container {
+  text-align: center;
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.video {
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+.text-buttons {
+  position: absolute;
+  width: 200vh;
+  margin-top: 10%;
+}
+
+.text-buttons h1 {
   color: white;
-  font-size: 16px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.7);
-  transition: 0.3s ease;
-  text-decoration: none;
+  font-size: 100px;
+  font-family: pacifico;
+  text-shadow: 4px 3px 13px rgba(0, 0, 0, 1);
+}
+
+.buttons {
+  width: 200vh;
+}
+
+button.btn.btn-secondary.btn-lg.btn-block {
+  background-color: black;
+  opacity: 0.7;
+  border-color: transparent;
+  box-shadow: 0px 0px 4px gray;
 }
 
 button a {
@@ -32,10 +47,25 @@ button a:hover {
   text-decoration: none;
 }
 
-.video{
-  z-index: -1;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+.list {
+  margin-bottom: 200px;
+  h1 {
+    color: white;
+    font-size: 60px;
+    font-family: pacifico;
+    text-shadow: 4px 3px 13px rgba(0, 0, 0, 1);
+    margin: 80px 0;
+  }
+  h2 {
+    color: white;
+    font-size: 25px;
+    font-family: pacifico;
+    text-shadow: 1px 1px 1px black;
+    text-align: left;
+    margin: 0 0 20px 80px;
+  }
+}
+
+.intro {
+  text-align: center;
 }
