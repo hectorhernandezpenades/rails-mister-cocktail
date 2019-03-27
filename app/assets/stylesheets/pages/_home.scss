@@ -15,8 +15,7 @@
 
 .text-buttons {
   position: absolute;
-  width: 200vh;
-  margin-top: 10%;
+  margin-top: 200px;
 }
 
 .text-buttons h1 {
@@ -27,14 +26,21 @@
 }
 
 .buttons {
-  width: 200vh;
+  display: flex;
 }
 
 button.btn.btn-secondary.btn-lg.btn-block {
+  width: 100%;
   background-color: black;
-  opacity: 0.7;
+  opacity: 0.6;
   border-color: transparent;
+  margin-right: 10px;
   box-shadow: 0px 0px 4px gray;
+  flex-grow: 1;
+}
+
+button.btn.btn-secondary.btn-lg.btn-block:hover {
+  opacity: 1;
 }
 
 button a {
@@ -45,6 +51,27 @@ button a {
 button a:hover {
   color: white;
   text-decoration: none;
+}
+
+.btn-flat {
+  width: 100%;
+  background-color: white;
+  opacity: 0.6;
+  border-color: transparent;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.btn-flat:hover {
+  opacity: 1;
+  box-shadow: 0px 0px 4px black;
+}
+
+a#scroll.btn.btn-flat {
+  color: black;
+  text-decoration: none;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 .list {
