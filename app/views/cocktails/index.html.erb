@@ -3,20 +3,44 @@
     <div class="video">
       <%= video_tag "landing-video.mp4", autoplay: "autoplay", id: "video", muted: true, width: "  100%", loop: "true", :class => "video"%>
     </div>
-    <h1>Hector's Cocktails</h1>
-  </div>
-
-  <div class="cards">
-    <% @cocktails.each do |cocktail| %>
-      <%= link_to cocktail_path(cocktail) do %>
-      <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo %>)">
-        <%= cocktail.name %>
+    <div class="text-buttons">
+      <h1>Hector's Cocktails</h1>
+      <div class="buttons">
+        <button type="button" class="btn btn-secondary btn-lg btn-block"><%= link_to 'New Cocktail', new_cocktail_path %></button>
+        <a class="btn btn-flat" href="#scroll-down" id="scroll">List of Cocktails</a>
       </div>
-      <% end %>
-    <% end %>
+    </div>
   </div>
-
-
-  <button type="button" class="btn btn-secondary btn-lg btn-block"><%= link_to 'New Cocktail', new_cocktail_path %></button>
+  <div class="list">
+    <div class="intro">
+      <h1>Our Cocktails</h1>
+      <h2>We have
+        <% if @cocktails %>
+          <% if @cocktails.count == 1 %>
+            <%= @cocktails.count %> delicious drink</h2>
+          <% else %>
+            <%= @cocktails.count %> delicious <%= "drink".pluralize %></h2>
+          <% end %>
+        <% end %>
+    </div>
+    <div class="cards">
+      <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail_path(cocktail) do %>
+        <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.photo %>)">
+          <%= cocktail.name %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
 </div>
+
+<script>
+  document.getElementById('scroll').addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector('.list').scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+</script>
