@@ -45,7 +45,8 @@
   margin: 40px;
 }
 .ingredients-list {
-  flex-grow: 1;
+  width: 55%;
+  padding-right: 40px;
   display: flex;
   flex-direction: column;
   color: white;
@@ -55,9 +56,13 @@
     margin-bottom: 20px;
   }
 }
-.ingredient {
+#ingredient {
   display: flex;
   margin-bottom: 8px;
+}
+
+.fa-hand-point-right {
+  opacity: 1;
 }
 
 .fa-trash-alt {

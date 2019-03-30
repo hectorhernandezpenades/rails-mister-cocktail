@@ -1,2 +1,14 @@
 document.getElementById('ingredient<%= @dose.id %>').remove();
-console.log("hello");
+
+if (document.getElementById('ingredient') == null ) {
+  var newDose = '<div id="empty-ingredient"><p>Make this cocktail delicious by adding some funny ingredients from the list on your right! 🍸 <i class="fas fa-hand-point-right"></i></p></div>';
+  if (document.getElementById('ingredients-list-empty')) {
+    var doses = document.getElementById('ingredients-list-empty');
+    doses.insertAdjacentHTML('beforebegin', newDose);
+  } else if (document.getElementById('ingredients-list')) {
+    var doses = document.getElementById('ingredients-list');
+    doses.insertAdjacentHTML('beforebegin', newDose);
+  }
+}
+
+
