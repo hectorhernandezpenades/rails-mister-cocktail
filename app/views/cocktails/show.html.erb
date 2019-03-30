@@ -22,26 +22,34 @@
 
   <div class="ingredients-form">
     <div class="ingredients-list">
-      <h2>Ingredients list:</h2>
-        <ul id="ingredients-list">
-        <% @cocktail.doses.each do |dose| %>
-          <div id="ingredient<%= dose.id %>">
-            <div class="ingredient">
-              <li><%= dose.ingredient.name %> ( <%= dose.description %> )</li>
-              <div class="delete-ingredient">
-                <%= link_to dose_path(dose),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" },
-                    remote: true do %>
-                <div>
-                  <i class="fas fa-trash-alt"></i>
+      <h2 id="ingredients-header">Ingredients list:</h2>
+        <% if @cocktail.ingredients.empty? %>
+          <div id="empty-ingredient">
+            <p>Make this cocktail delicious by adding some funny ingredients from the list on your right! 🍸 <i class="fas fa-hand-point-right"></i></p>
+          </div>
+          <ul id="ingredients-list-empty">
+          </ul>
+        <% else %>
+          <ul id="ingredients-list">
+          <% @cocktail.doses.each do |dose| %>
+            <div id="ingredient<%= dose.id %>">
+              <div id="ingredient">
+                <li><%= dose.ingredient.name %> ( <%= dose.description %> )</li>
+                <div class="delete-ingredient">
+                  <%= link_to dose_path(dose),
+                      method: :delete,
+                      data: { confirm: "Are you sure?" },
+                      remote: true do %>
+                  <div>
+                    <i class="fas fa-trash-alt"></i>
+                  </div>
+                  <% end %>
                 </div>
-                <% end %>
               </div>
             </div>
-          </div>
+          <% end %>
+          </ul>
         <% end %>
-      </ul>
     </div>
     <div class="new-ingredient">
       <h1>Add a new ingredient</h1>

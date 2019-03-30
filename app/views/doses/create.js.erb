@@ -1,7 +1,23 @@
-var newDose = '<div id="ingredient<%= @dose.id %>"><div class="ingredient"><li><%= @dose.ingredient.name %> ( <%= @dose.description %> )</li><div class="delete-ingredient"><%= link_to dose_path(@dose), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><div><i class="fas fa-trash-alt"></i></div><% end %></div></div></div>';
-var doses = document.getElementById('ingredients-list');
-doses.insertAdjacentHTML('beforeend', newDose);
-var inputBox = document.getElementById('dose_description');
-var inputDropdown = document.getElementById('dose_ingredient_id');
-inputBox.value = "";
-inputDropdown.value = "";
+if (document.getElementById('empty-ingredient')) {
+  document.getElementById('empty-ingredient').remove();
+}
+
+if (document.getElementById('ingredients-list') == null ) {
+  var newDose = '<div id="ingredient<%= @dose.id %>"><div id="ingredient"><li><%= @dose.ingredient.name %> ( <%= @dose.description %> )</li><div class="delete-ingredient"><%= link_to dose_path(@dose), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><div><i class="fas fa-trash-alt"></i></div><% end %></div></div></div>';
+  var doses = document.getElementById('ingredients-list-empty');
+  doses.insertAdjacentHTML('beforeend', newDose);
+  var inputBox = document.getElementById('dose_description');
+  var inputDropdown = document.getElementById('dose_ingredient_id');
+  inputBox.value = "";
+  inputDropdown.value = "";
+} else {
+  var newDose = '<div id="ingredient<%= @dose.id %>"><div id="ingredient"><li><%= @dose.ingredient.name %> ( <%= @dose.description %> )</li><div class="delete-ingredient"><%= link_to dose_path(@dose), method: :delete, data: { confirm: "Are you sure?" }, remote: true do %><div><i class="fas fa-trash-alt"></i></div><% end %></div></div></div>';
+  var doses = document.getElementById('ingredients-list');
+  doses.insertAdjacentHTML('beforeend', newDose);
+  var inputBox = document.getElementById('dose_description');
+  var inputDropdown = document.getElementById('dose_ingredient_id');
+  inputBox.value = "";
+  inputDropdown.value = "";
+}
+
+
