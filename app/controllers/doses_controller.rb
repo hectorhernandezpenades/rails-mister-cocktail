@@ -3,6 +3,7 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
+    @dose.description = params[:dose][:description].strip
     @dose.save
   end
 
