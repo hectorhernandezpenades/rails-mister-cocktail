@@ -1,7 +1,7 @@
 button.btn.btn-secondary.btn-lg.btn-block {
   width: 100%;
-  background-color: black;
-  opacity: 0.6;
+  background-color: #ED3071;
+  opacity: 0.9;
   border-color: transparent;
   margin-right: 10px;
   box-shadow: 0px 0px 4px gray;
@@ -9,7 +9,7 @@ button.btn.btn-secondary.btn-lg.btn-block {
 }
 
 button.btn.btn-secondary.btn-lg.btn-block:hover {
-  opacity: 1;
+  opacity: 0.7;
 }
 
 button a {
@@ -24,15 +24,15 @@ button a:hover {
 
 .btn-flat {
   width: 100%;
-  background-color: white;
-  opacity: 0.6;
+  background-color: #FDE55B;
+  opacity: 0.9;
   border-color: transparent;
   margin-left: 10px;
   flex-grow: 1;
 }
 
 .btn-flat:hover {
-  opacity: 1;
+  opacity: 0.7;
   box-shadow: 0px 0px 4px black;
 }
 
@@ -41,4 +41,14 @@ a#scroll.btn.btn-flat {
   text-decoration: none;
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.btn-add-ingredient {
+  background-color: #ED3071;
+  color: white;
+}
+
+.btn-add-ingredient:hover {
+  color: white;
+  box-shadow: 0px 0px 5px gray;
 }
