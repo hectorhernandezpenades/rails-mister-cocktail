@@ -52,3 +52,13 @@ a#scroll.btn.btn-flat {
   color: white;
   box-shadow: 0px 0px 5px gray;
 }
+
+.btn-create-cocktail {
+  width: 100%;
+  background-color: #FDE55B;
+  box-shadow: 0px 0px 4px gray;
+}
+
+.btn-create-cocktail:hover {
+  box-shadow: 0px 0px 4px white;
+}
