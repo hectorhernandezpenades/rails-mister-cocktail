@@ -1,7 +1,7 @@
 <div class="container-show">
   <div class="banner">
     <%= cl_image_tag(@cocktail.photo, width: 1080, height: 300, crop: :fill) %>
-    <h1><%= @cocktail.name.capitalize %></h1>
+    <h1><%= @cocktail.name.split.map(&:capitalize).join(' ') %></h1>
     <div class="edit">
       <%= link_to edit_cocktail_path(@cocktail) do %>
         <div>
@@ -71,7 +71,7 @@
       </div>
     </div>
     <div class="back-to-list">
-      <%= link_to 'Back to all cocktail list', cocktails_path %>
+      <%= link_to '< Back to all cocktail list', cocktails_path %>
     </div>
   </div>
 </div>
