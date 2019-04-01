@@ -46,6 +46,7 @@
 
 .ingredients-form {
   display: flex;
+  margin-bottom: 40px;
 }
 
 .ingredients-list {
@@ -107,7 +108,7 @@ i:hover {
 }
 
 .back-to-list {
-  margin: 40px 0 0 40px;
+  margin: 0 0 0 40px;
   a {
     color: #FDE55B;
     text-shadow: 1px 1px 9px rgba(0, 0, 0, 0.7);
