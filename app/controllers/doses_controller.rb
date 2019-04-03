@@ -4,7 +4,17 @@ class DosesController < ApplicationController
     @dose = Dose.new(dose_params)
     @dose.cocktail = @cocktail
     @dose.description = params[:dose][:description].strip
-    @dose.save
+    if @dose.save
+      respond_to do |format|
+        format.html { redirect_to cocktail_path(@cocktail) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'cocktail/show' }
+        format.js
+      end
+    end
   end
 
   def destroy
