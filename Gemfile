@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # group :assets do
 #   gem 'turbo-sprockets-rails3'
 # end
-
+gem 'rails_12factor'
 gem 'cloudinary', '~> 1.9.1'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'carrierwave', '~> 1.2'
