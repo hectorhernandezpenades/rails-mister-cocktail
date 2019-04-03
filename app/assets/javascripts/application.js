@@ -15,3 +15,5 @@
 //= require turbolinks
 //= require_tree .
 import 'bootstrap';
+import $ from 'jquery';
+global.$ = jQuery;
